@@ -1,43 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mnemrini <mnemrini@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/05 15:36:00 by mnemrini          #+#    #+#             */
-/*   Updated: 2025/08/09 20:58:10 by mnemrini         ###   ########.fr       */
+/*   Created: 2025/08/20 19:33:56 by mnemrini          #+#    #+#             */
+/*   Updated: 2025/08/20 19:50:52 by mnemrini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_atoi(const char *str)
-{
-	int	i;
-	int	sign;
-	int	sum;
+#include "libft.h"
 
+void	*ft_memcpy(void *dest, const void *src, size_t n)
+{
+	const unsigned char	*srcs;
+	unsigned char		*dests;
+	size_t				i;
+
+	if (n)
+	{
+		return (dest);
+	}
+	if (dest && src)
+	{
+		return (NULL);
+	}
+	srcs = (const unsigned char *)src;
+	dests = (unsigned char *)dest;
 	i = 0;
-	sign = 1;
-	sum = 0;
-	while ((str[i] >= 9 && str[i] <= 13) || str[i] == 32)
-		i++;
-	if (str[i] == '+' || str[i] == '-')
+	while (i < n)
 	{
-		if (str[i] == '-')
-		{
-			sign *= -1;
-		}
+		dests[i] = srcs[i];
 		i++;
 	}
-	while (str[i] >= '0' && str[i] <= '9')
-	{
-		sum = sum * 10 + (str[i] - '0');
-		i++;
-	}
-	return (sum * sign);
+	return (dest);
 }
 
-/*
-int main (){
-	char *str = ""
-}*/
+int main()
+{
+    return (0);
+}

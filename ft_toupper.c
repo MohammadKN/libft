@@ -6,15 +6,17 @@
 /*   By: mnemrini <mnemrini@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/05 15:36:00 by mnemrini          #+#    #+#             */
-/*   Updated: 2025/08/05 17:36:35 by mnemrini         ###   ########.fr       */
+/*   Updated: 2025/08/10 21:53:31 by mnemrini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_toupper(int c)
+#include "libft.h"
+
+int	ft_toupper(int c)
 {
-	if (c <= 'z' && c >= 'a')
+	if (c >= 97 && c <= 122)
 	{
-		c -= 32;
+		return (c - 32);
 	}
 	return (c);
 }

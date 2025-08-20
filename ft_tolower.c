@@ -6,15 +6,17 @@
 /*   By: mnemrini <mnemrini@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/05 15:36:00 by mnemrini          #+#    #+#             */
-/*   Updated: 2025/08/05 17:36:47 by mnemrini         ###   ########.fr       */
+/*   Updated: 2025/08/10 21:53:44 by mnemrini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_tolower(int c)
+#include "libft.h"
+
+int	ft_tolower(int c)
 {
-	if (c <= 'Z' && c >= 'A')
+	if (c >= 65 && c <= 90)
 	{
-		c += 32;
+		return (c + 32);
 	}
 	return (c);
 }

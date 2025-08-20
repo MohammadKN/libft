@@ -1,43 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mnemrini <mnemrini@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/05 15:36:00 by mnemrini          #+#    #+#             */
-/*   Updated: 2025/08/09 20:58:10 by mnemrini         ###   ########.fr       */
+/*   Updated: 2025/08/20 19:30:00 by mnemrini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_atoi(const char *str)
+#include "libft.h"
+
+char	*ft_strdup(const char *s)
 {
-	int	i;
-	int	sign;
-	int	sum;
+	char	*d;
+	size_t	size;
 
-	i = 0;
-	sign = 1;
-	sum = 0;
-	while ((str[i] >= 9 && str[i] <= 13) || str[i] == 32)
-		i++;
-	if (str[i] == '+' || str[i] == '-')
-	{
-		if (str[i] == '-')
-		{
-			sign *= -1;
-		}
-		i++;
-	}
-	while (str[i] >= '0' && str[i] <= '9')
-	{
-		sum = sum * 10 + (str[i] - '0');
-		i++;
-	}
-	return (sum * sign);
+	if (!s)
+		return (NULL);
+	size = ft_strlen(s);
+	d = (char *)malloc(size + 1);
+	if (!d)
+		return (NULL);
+	ft_strlcpy(d, s, size + 1);
+	return (d);
 }
-
-/*
 int main (){
-	char *str = ""
-}*/
+	char *x = "Hello";
+	printf("%s, %s", x, ft_strdup(x));
+}

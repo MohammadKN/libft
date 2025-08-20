@@ -24,8 +24,8 @@ int	ft_isalnum(int c)
 	}
 	return (0);
 }
-
+/*
 int	main()
 {
 	return (0);
-}
+}*/
